@@ -10,6 +10,7 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
       <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet" />
       <link rel="stylesheet" href="css/styles.css" />
+      <link rel="stylesheet" href="css/media.css" />
    </head>
    <body>
       <!-- header -->
@@ -18,22 +19,91 @@
             <nav class="header__nav">
                <a href="./index.html" class="header__logo link">Web<span>Studio</span></a>
                <ul class="header__menu-list list">
-                  <li class="header__menu-item"><a href="./index.html" class="header__menu-link link">Studio</a></li>
-                  <li class="header__menu-item active"><a href="./portfolio.html" class="header__menu-link link">Portfolio</a></li>
+                  <li class="header__menu-item">
+                     <a href="./index.html" class="header__menu-link link">Studio</a>
+                  </li>
+                  <li class="header__menu-item active">
+                     <a href="./portfolio.html" class="header__menu-link link">Portfolio</a>
+                  </li>
                   <li class="header__menu-item"><a href="" class="header__menu-link link">Contacts</a></li>
                </ul>
             </nav>
             <address class="header__contacts">
                <ul class="list header__contacts-list">
-                  <li class="header__contacts-item"><a href="mailto:info@devstudio.com" class="header__contacts-link link">info@devstudio.com</a></li>
-                  <li class="header__contacts-item"><a href="tel:+110001111111" class="header__contacts-link link">+11 (000) 111-11-11</a></li>
+                  <li class="header__contacts-item">
+                     <a href="mailto:info@devstudio.com" class="header__contacts-link link">info@devstudio.com</a>
+                  </li>
+                  <li class="header__contacts-item">
+                     <a href="tel:+110001111111" class="header__contacts-link link">+11 (000) 111-11-11</a>
+                  </li>
                </ul>
             </address>
+            <button type="button" class="btn-open-menu" data-menu-open>
+               <svg class="icon-open-menu" width="32" height="22">
+                  <use href="./images/modal/icons.svg#icon-hamburger"></use>
+               </svg>
+            </button>
+         </div>
+         <div class="mob-menu is-hidden" data-menu>
+            <div>
+               <button type="button" class="btn-close-menu" data-menu-close>
+                  <svg class="icon-close-menu" width="8" height="8">
+                     <use href="./images/social-icons.svg#icon-x-button"></use>
+                  </svg>
+               </button>
+               <ul class="mob-nav-list list">
+                  <li class="mob-nav-item"><a class="mob-nav-link link" href="./index.html">Studio</a></li>
+                  <li class="mob-nav-item">
+                     <a class="mob-nav-link active link" href="./portfolio.html">Portfolio</a>
+                  </li>
+                  <li class="mob-nav-item"><a class="mob-nav-link link" href="">Contacts</a></li>
+               </ul>
+            </div>
+            <div>
+               <ul class="mob-menu-list list">
+                  <li class="mob-menu-item">
+                     <a class="menu-tel link" href="tel:+110001111111">+11 (000) 111-11-11</a>
+                  </li>
+                  <li class="mob-menu-item">
+                     <a class="menu-email link" href="mailto:info@devstudio.com">info@devstudio.com</a>
+                  </li>
+               </ul>
+               <ul class="mob-soc-list list">
+                  <li class="mob-soc-item item">
+                     <a href="" class="mob-soc-link link">
+                        <svg width="24" height="24" class="mob-soc-icon">
+                           <use href="./images/social-icons.svg#icon-instagram"></use>
+                        </svg>
+                     </a>
+                  </li>
+                  <li class="mob-soc-item item">
+                     <a href="" class="mob-soc-link link">
+                        <svg width="24" height="24" class="mob-soc-icon">
+                           <use href="./images/social-icons.svg#icon-twitter"></use>
+                        </svg>
+                     </a>
+                  </li>
+                  <li class="mob-soc-item item">
+                     <a href="" class="mob-soc-link link">
+                        <svg width="24" height="24" class="mob-soc-icon">
+                           <use href="./images/social-icons.svg#icon-facebook"></use>
+                        </svg>
+                     </a>
+                  </li>
+                  <li class="mob-soc-item item">
+                     <a href="" class="mob-soc-link link">
+                        <svg width="24" height="24" class="mob-soc-icon">
+                           <use href="./images/social-icons.svg#icon-linkedin"></use>
+                        </svg>
+                     </a>
+                  </li>
+               </ul>
+            </div>
          </div>
       </header>
       <!-- main -->
       <main class="main">
-         <section class="projects">
+         <section class="projects section">
             <h1 class="projects__title" hidden>My portfolio</h1>
             <div class="container">
                <ul class="filter__list list">
@@ -47,7 +117,12 @@
                   <li class="projects__item">
                      <a href="" class="link">
                         <div class="projects__item-wrapper">
-                           <img src="./images/portfolio/banking-app-interface-concept.jpg" alt="banking app interface" class="projects__item-img" width="360" height="300" />
+                           <picture>
+                              <source srcset="./images/portfolio/project-img1.jpg 1x, ./images/portfolio/project-img1-2x.jpg 2x" media="(min-width: 1158px)" />
+                              <source srcset="./images/portfolio/project-img1-tab.jpg 1x, ./images/portfolio/project-img1-tab-2x.jpg 2x" media="(min-width: 768px)" />
+                              <source srcset="./images/portfolio/project-img1-mob.jpg 1x, ./images/portfolio/project-img1-mob-2x.jpg 2x" media="(max-width: 767px)" />
+                              <img src="./images/portfolio/project-img1-mob.jpg" class="project-img" alt="Phone's screens from bank app" width="396" height="400" />
+                           </picture>
                            <p class="project__item-cover-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                         </div>
                         <div class="project__item-content">
@@ -59,7 +134,12 @@
                   <li class="projects__item">
                      <a href="" class="link">
                         <div class="projects__item-wrapper">
-                           <img src="./images/portfolio/cashless-payment.jpg" alt="using a smartphone to pay" class="projects__item-img" width="360" height="300" />
+                           <picture>
+                              <source srcset="./images/portfolio/project-img2.jpg 1x, ./images/portfolio/project-img2-2x.jpg 2x" media="(min-width: 1158px)" />
+                              <source srcset="./images/portfolio/project-img2-tab.jpg 1x, ./images/portfolio/project-img2-tab-2x.jpg 2x" media="(min-width: 768px)" />
+                              <source srcset="./images/portfolio/project-img2-mob.jpg 1x, ./images/portfolio/project-img2-mob-2x.jpg 2x" media="(max-width: 767px)" />
+                              <img src="./images/portfolio/project-img2-mob.jpg" class="project-img" alt="Phone scanning qr code" width="396" height="400" />
+                           </picture>
                            <p class="project__item-cover-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                         </div>
                         <div class="project__item-content">
@@ -71,7 +151,12 @@
                   <li class="projects__item">
                      <a href="" class="link">
                         <div class="projects__item-wrapper">
-                           <img src="./images/portfolio/meditaion-app.jpg" alt="meditation app" class="projects__item-img" width="360" height="300" />
+                           <picture>
+                              <source srcset="./images/portfolio/project-img3.jpg 1x, ./images/portfolio/project-img3-2x.jpg 2x" media="(min-width: 1158px)" />
+                              <source srcset="./images/portfolio/project-img3-tab.jpg 1x, ./images/portfolio/project-img3-tab-2x.jpg 2x" media="(min-width: 768px)" />
+                              <source srcset="./images/portfolio/project-img3-mob.jpg 1x, ./images/portfolio/project-img3-mob-2x.jpg 2x" media="(max-width: 767px)" />
+                              <img src="./images/portfolio/project-img3-mob.jpg" class="project-img" alt="Laptop and phone" width="396" height="400" />
+                           </picture>
                            <p class="project__item-cover-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                         </div>
                         <div class="project__item-content">
@@ -83,7 +168,12 @@
                   <li class="projects__item">
                      <a href="" class="link">
                         <div class="projects__item-wrapper">
-                           <img src="./images/portfolio/taxi-service.jpg" alt="taxi service" class="projects__item-img" width="360" height="300" />
+                           <picture>
+                              <source srcset="./images/portfolio/project-img4.jpg 1x, ./images/portfolio/project-img4-2x.jpg 2x" media="(min-width: 1158px)" />
+                              <source srcset="./images/portfolio/project-img4-tab.jpg 1x, ./images/portfolio/project-img4-tab-2x.jpg 2x" media="(min-width: 768px)" />
+                              <source srcset="./images/portfolio/project-img4-mob.jpg 1x, ./images/portfolio/project-img4-mob-2x.jpg 2x" media="(max-width: 767px)" />
+                              <img src="./images/portfolio/project-img4-mob.jpg" class="project-img" alt="Car's wheel with hands on it" width="396" height="400" />
+                           </picture>
                            <p class="project__item-cover-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                         </div>
                         <div class="project__item-content">
@@ -95,7 +185,12 @@
                   <li class="projects__item">
                      <a href="" class="link">
                         <div class="projects__item-wrapper">
-                           <img src="./images/portfolio/screen-illustrations.jpg" alt="phone theme illustration" class="projects__item-img" width="360" height="300" />
+                           <picture>
+                              <source srcset="./images/portfolio/project-img5.jpg 1x, ./images/portfolio/project-img5-2x.jpg 2x" media="(min-width: 1158px)" />
+                              <source srcset="./images/portfolio/project-img5-tab.jpg 1x, ./images/portfolio/project-img5-tab-2x.jpg 2x" media="(min-width: 768px)" />
+                              <source srcset="./images/portfolio/project-img5-mob.jpg 1x, ./images/portfolio/project-img5-mob-2x.jpg 2x" media="(max-width: 767px)" />
+                              <img src="./images/portfolio/project-img5-mob.jpg" class="project-img" alt="Full moon on screen illustrations" width="396" height="400" />
+                           </picture>
                            <p class="project__item-cover-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                         </div>
                         <div class="project__item-content">
@@ -107,7 +202,12 @@
                   <li class="projects__item">
                      <a href="" class="link">
                         <div class="projects__item-wrapper">
-                           <img src="./images/portfolio/online-courses.jpg" alt="girl speaking by video chat" class="projects__item-img" width="360" height="300" />
+                           <picture>
+                              <source srcset="./images/portfolio/project-img6.jpg 1x, ./images/portfolio/project-img6-2x.jpg 2x" media="(min-width: 1158px)" />
+                              <source srcset="./images/portfolio/project-img6-tab.jpg 1x, ./images/portfolio/project-img6-tab-2x.jpg 2x" media="(min-width: 768px)" />
+                              <source srcset="./images/portfolio/project-img6-mob.jpg 1x, ./images/portfolio/project-img6-mob-2x.jpg 2x" media="(max-width: 767px)" />
+                              <img src="./images/portfolio/project-img6-mob.jpg" class="project-img" alt="Girl in glasses with phone" width="396" height="400" />
+                           </picture>
                            <p class="project__item-cover-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                         </div>
                         <div class="project__item-content">
@@ -119,7 +219,12 @@
                   <li class="projects__item">
                      <a href="" class="link">
                         <div class="projects__item-wrapper">
-                           <img src="./images/portfolio/instagram-stories-concept.jpg" alt="concept of instagram stories" class="projects__item-img" width="360" height="300" />
+                           <picture>
+                              <source srcset="./images/portfolio/project-img7.jpg 1x, ./images/portfolio/project-img7-2x.jpg 2x" media="(min-width: 1158px)" />
+                              <source srcset="./images/portfolio/project-img7-tab.jpg 1x, ./images/portfolio/project-img7-tab-2x.jpg 2x" media="(min-width: 768px)" />
+                              <source srcset="./images/portfolio/project-img7-mob.jpg 1x, ./images/portfolio/project-img7-mob-2x.jpg 2x" media="(max-width: 767px)" />
+                              <img src="./images/portfolio/project-img2-mob.jpg" class="project-img" alt="Instagram stories concept" width="396" height="400" />
+                           </picture>
                            <p class="project__item-cover-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                         </div>
                         <div class="project__item-content">
@@ -131,7 +236,12 @@
                   <li class="projects__item">
                      <a href="" class="link">
                         <div class="projects__item-wrapper">
-                           <img src="./images/portfolio/organic-food.jpg" alt="girl carry organic food" class="projects__item-img" width="360" height="300" />
+                           <picture>
+                              <source srcset="./images/portfolio/project-img8.jpg 1x, ./images/portfolio/project-img8-2x.jpg 2x" media="(min-width: 1158px)" />
+                              <source srcset="./images/portfolio/project-img8-tab.jpg 1x, ./images/portfolio/project-img8-tab-2x.jpg 2x" media="(min-width: 768px)" />
+                              <source srcset="./images/portfolio/project-img8-mob.jpg 1x, ./images/portfolio/project-img8-mob-2x.jpg 2x" media="(max-width: 767px)" />
+                              <img src="./images/portfolio/project-img8-mob.jpg" class="project-img" alt="Girl with vegetables in shopping bag" width="396" height="400" />
+                           </picture>
                            <p class="project__item-cover-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                         </div>
                         <div class="project__item-content">
@@ -143,7 +253,12 @@
                   <li class="projects__item">
                      <a href="" class="link">
                         <div class="projects__item-wrapper">
-                           <img src="./images/portfolio/fresh-coffee.jpg" alt="latte art example" class="projects__item-img" width="360" height="300" />
+                           <picture>
+                              <source srcset="./images/portfolio/project-img9.jpg 1x, ./images/portfolio/project-img9-2x.jpg 2x" media="(min-width: 1158px)" />
+                              <source srcset="./images/portfolio/project-img9-tab.jpg 1x, ./images/portfolio/project-img9-tab-2x.jpg 2x" media="(min-width: 768px)" />
+                              <source srcset="./images/portfolio/project-img9-mob.jpg 1x, ./images/portfolio/project-img9-mob-2x.jpg 2x" media="(max-width: 767px)" />
+                              <img src="./images/portfolio/project-img9-mob.jpg" class="project-img" alt="Pouring milk in cup with coffee" width="396" height="400" />
+                           </picture>
                            <p class="project__item-cover-text">14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App</p>
                         </div>
                         <div class="project__item-content">
@@ -169,28 +284,28 @@
                   <li class="footer__item">
                      <a href="" class="footer__link">
                         <svg width="24" height="24" class="footer__icon">
-                           <use href="./images/icons.svg#icon-instagram"></use>
+                           <use class="footer-social-icon" href="./images/social-icons.svg#icon-instagram"></use>
                         </svg>
                      </a>
                   </li>
                   <li class="footer__item">
                      <a href="" class="footer__link">
                         <svg width="24" height="24" class="footer__icon">
-                           <use href="./images/icons.svg#icon-twitter"></use>
+                           <use href="./images/social-icons.svg#icon-twitter"></use>
                         </svg>
                      </a>
                   </li>
                   <li class="footer__item">
                      <a href="" class="footer__link">
                         <svg width="24" height="24" class="footer__icon">
-                           <use href="./images/icons.svg#icon-facebook"></use>
+                           <use href="./images/social-icons.svg#icon-facebook"></use>
                         </svg>
                      </a>
                   </li>
                   <li class="footer__item">
                      <a href="" class="footer__link">
                         <svg width="24" height="24" class="footer__icon">
-                           <use href="./images/icons.svg#icon-linkedin"></use>
+                           <use href="./images/social-icons.svg#icon-linkedin"></use>
                         </svg>
                      </a>
                   </li>
@@ -203,12 +318,13 @@
                   <button class="footer__form-button" type="submit">
                      <span>Subscribe</span>
                      <svg class="footer__form-icon" width="24" height="20">
-                        <use href="./images/icons.svg#icon-telegram"></use>
+                        <use href="./images/modal-icons.svg#icon-plane"></use>
                      </svg>
                   </button>
                </form>
             </div>
          </div>
       </footer>
+      <script src="./js/menu.js"></script>
    </body>
 </html>
