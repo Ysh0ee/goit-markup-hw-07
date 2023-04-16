@@ -458,8 +458,8 @@ body {
    border: 1px solid var(--hover-color);
 }
 
-.customers__link:hover .customers-icon,
-.customers__link:focus .customers-icon {
+.customers__link:hover .customers__icon,
+.customers__link:focus .customers__icon {
    fill: var(--hover-color);
 }
 
