@@ -34,17 +34,17 @@
       display: none;
    }
 
-   .main-header {
+   .header {
       padding-top: 11px;
       padding-bottom: 11px;
    }
 
-   .nav-menu {
+   .header__menu-list {
       display: flex;
       gap: var(--gap-40);
    }
 
-   .nav-link {
+   .header__menu-link {
       font-weight: 500;
       font-size: 16px;
       line-height: 1.5;
@@ -55,54 +55,39 @@
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
    }
 
-   .studio-link {
-      color: var(--hover-color);
+   .header__menu-item {
+      position: relative;
    }
 
-   .studio-link::after {
+   .header__menu-item.active::after {
       content: '';
-      display: block;
-      width: 48px;
-      height: 4px;
       position: absolute;
-      bottom: -1px;
-      background: #404bbf;
-      border-radius: 2px;
+      bottom: -22px;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: var(--hover-color);
+      border-radius: 4px;
    }
 
-   .portfolio-link {
+   .header__menu-link:hover,
+   .header__menu-link:focus,
+   .header__menu-link:active {
       color: var(--hover-color);
    }
 
-   .portfolio-link::after {
-      content: '';
-      display: block;
-      width: 66px;
-      height: 4px;
-      position: absolute;
-      bottom: -1px;
-      background: #404bbf;
-      border-radius: 2px;
-   }
-
-   .nav-link:hover,
-   .nav-link:focus,
-   .nav-link:active {
-      color: var(--hover-color);
-   }
-
-   .address-header {
+   .header__contacts {
       display: block;
       font-style: normal;
    }
 
-   .address-list {
+   .header__contacts-list {
       display: flex;
       flex-direction: column;
       gap: 12px;
    }
 
-   .address-info {
+   .header__contacts-link {
       font-style: normal;
       font-size: 12px;
       line-height: 1.17;
@@ -113,7 +98,7 @@
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
    }
 
-   .address-info:is(:hover, :focus) {
+   .header__contacts-link:is(:hover, :focus) {
       color: var(--hover-color);
    }
 
@@ -130,7 +115,7 @@
       }
    }
 
-   .main-title {
+   .hero__title {
       max-width: 496px;
       font-size: 56px;
       line-height: 1.07;
@@ -139,28 +124,28 @@
 
    /* FEATURE TABLET*/
 
-   .feature-list {
+   .features__list {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       gap: 72px 24px;
    }
 
-   .feature-item {
+   .features__item {
       width: calc((100% - 24px) / 2);
    }
 
-   .feature-title {
+   .features__title {
       text-align: left;
    }
 
    /* OUR TEAM */
 
-   .section-team > .container {
+   .our-team > .container {
       width: 582px;
    }
 
-   .our-team-list {
+   .our-team__list {
       width: 100%;
       justify-content: center;
       flex-direction: row;
@@ -168,68 +153,68 @@
       gap: 64px 24px;
    }
 
-   .our-team-item {
+   .our-team__item {
       width: calc((100% - 24px) / 2);
    }
 
    /* CUSTOMERS */
 
-   .customers-section > .container {
+   .customers > .container {
       width: 582px;
    }
 
-   .customers-list {
+   .customers__list {
       gap: 72px 24px;
    }
 
-   .customers-item {
+   .customers__item {
       width: calc((100% - 48px) / 3);
    }
 
    /* FOOTER */
 
-   .page-footer > .container {
+   .footer > .container {
       width: 582px;
    }
 
-   .footer-container {
+   .footer__container {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
       gap: 72px 24px;
    }
 
-   .footer-content {
+   .footer__content {
       margin: 0;
    }
 
-   .footer-logo {
+   .footer__logo {
       text-align-last: left;
    }
 
-   .footer-header {
+   .footer__title {
       text-align: left;
    }
 
-   .footer-social {
+   .footer__social {
       margin: 0;
    }
 
-   .footer-subscribe {
+   .footer__subscribe {
       width: 453px;
    }
 
-   .footer-input {
+   .footer__form {
       flex-direction: row;
       justify-content: start;
       gap: 24px;
    }
 
-   .footer-input-email {
+   .footer__form-email {
       width: 264px;
    }
 
-   .subscribe-btn {
+   .footer__form-button {
       margin: 0;
    }
 
